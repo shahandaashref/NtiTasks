@@ -68,5 +68,5 @@ last2DigitsV2(num a, num b, num c, num d) {
   if (result < 10)
     print('0$result');
   else
-    print('result');
+    print('$result');
 }

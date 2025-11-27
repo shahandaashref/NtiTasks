@@ -15,5 +15,6 @@ num number4=int.parse(stdin.readLineSync()!);
 // area(number1);
 // ageInDays(number1);
 // summationToN(number1);
-last2Digits(number1, number2, number3, number4);
+//last2Digits(number1, number2, number3, number4);
+last2DigitsV2(number1, number2, number3, number4);
 }
