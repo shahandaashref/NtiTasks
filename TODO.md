@@ -1,0 +1,3 @@
+- [ ] Update lib/pages/home_page.dart to include FutureBuilder example (simulate fetching data)
+- [ ] Update lib/pages/home_page.dart to include StreamBuilder example (listen to a periodic stream)
+- [ ] Test the app to ensure it runs and displays the builders correctly
