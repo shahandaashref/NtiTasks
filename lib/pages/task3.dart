@@ -21,12 +21,13 @@ class Task3 extends StatelessWidget {
       body: Column(
         children: [
           ProfileImage(),
-          Gap(20),
-          Text("data"),
-          Gap(20),
-          Text("data"),
-          Gap(20),
-          Text("data"),
+          Gap(15),
+          Text("Shahanda Ashraf",style: TextStyle(fontSize: 25),),
+          Gap(15),
+          Text("Software Engineer",style: TextStyle(fontSize: 20),),
+          Gap(15),
+          Text("Egypt Bani Swauif",style: TextStyle(fontSize: 20),),
+          Gap(10),
           UserEmail(),
           Gap(20),
           Divider(
@@ -52,7 +53,7 @@ class ProfileMenuTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 250,
+      height: 230,
       child: ListView.builder(
         itemCount: cardText.length,
         itemBuilder: (context, index) {
@@ -86,7 +87,7 @@ class UserEmail extends StatelessWidget {
         color: const Color.fromARGB(149, 71, 141, 176),
         borderRadius: BorderRadius.circular(16),
       ),
-      child: Row(children: [Icon(Icons.mail), Gap(20), Text("data")]),
+      child: Row(children: [Icon(Icons.mail), Gap(20), Text("Shahanda@gmail.com")]),
     );
   }
 }
