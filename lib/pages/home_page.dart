@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:studing/custom/custom_circle_image.dart';
-import 'package:studing/custom/custom_profile_header.dart';
+import 'package:studing/custom/custom_home_header.dart';
 import 'package:studing/custom/custom_story_card.dart';
 
 class HomePage extends StatelessWidget {

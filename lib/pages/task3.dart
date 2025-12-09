@@ -54,17 +54,21 @@ class ProfileMenuTile extends StatelessWidget {
     return SizedBox(
       height: 250,
       child: ListView.builder(
-        itemCount: 3,
+        itemCount: cardText.length,
         itemBuilder: (context, index) {
-          return Card(
-            child: ListTile(
-              leading: Icon(Icons.account_circle_outlined),
-              title: Text('data'),
-              trailing: Icon(Icons.arrow_forward_ios_outlined),
-              style: ListTileStyle.drawer,
-            ),
-          );
+          return cardElement(text: cardText[index], icon: cardIcon[index]);
         },
+      ),
+    );
+  }
+
+  Card cardElement({required String text, required IconData icon}) {
+    return Card(
+      child: ListTile(
+        leading: Icon(icon),
+        title: Text(text),
+        trailing: Icon(Icons.arrow_forward_ios_outlined),
+        style: ListTileStyle.drawer,
       ),
     );
   }
@@ -110,7 +114,7 @@ class ProfileImage extends StatelessWidget {
           width: 70,
           decoration: BoxDecoration(
             shape: BoxShape.circle,
-            border: Border.all(color: Colors.white,width: 2),
+            border: Border.all(color: Colors.white, width: 2),
             image: DecorationImage(
               image: NetworkImage(
                 'https://tse4.mm.bing.net/th/id/OIP.JcF8-bCDB633trhd_1mPoAHaEK?pid=Api&P=0&h=220',
@@ -123,3 +127,18 @@ class ProfileImage extends StatelessWidget {
     );
   }
 }
+
+List <IconData>cardIcon = [
+  Icons.settings,
+  Icons.notifications,
+  Icons.notifications,
+  Icons.notifications,
+  Icons.notifications,
+];
+List <String>cardText = [
+  'Setting',
+  'Notifications',
+  'Notifications',
+  'Notifications',
+  'Notifications',
+];

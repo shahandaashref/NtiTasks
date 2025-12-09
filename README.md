@@ -4,9 +4,9 @@ A new Flutter project.
 ## two tasks:
  
  ### home page ,
- ![alt text](image.png)
+ ![alt text](image-3.png)
  ### profile page,
- ![alt text](image-1.png)
+ ![alt text](image-2.png)
 
 
 - [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
