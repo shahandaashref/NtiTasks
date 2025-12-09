@@ -1,13 +1,11 @@
 # studing
 
 A new Flutter project.
-
-## Getting Started
-
-two tasks:
- home page ,
+## two tasks:
+ 
+ ### home page ,
  ![alt text](image.png)
- profile page,
+ ### profile page,
  ![alt text](image-1.png)
 
 
