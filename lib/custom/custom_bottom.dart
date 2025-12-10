@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-Widget customtextbottom({required String text,onPressed}) {
+Widget customtextbottom({required String text,onPressed,color=Colors.deepPurpleAccent,}) {
   return TextButton(
 
     onPressed: () {},
@@ -12,10 +12,10 @@ Widget customtextbottom({required String text,onPressed}) {
         height: 55,
         alignment: Alignment.center,
         decoration: BoxDecoration(
-          color: const Color.fromARGB(255, 249, 249, 249),
+          color: color,
           borderRadius: BorderRadius.circular(8.h)
         ),
-        child: Text(text, style: TextStyle(fontSize: 30,color: Color(0xff1380A5),))),
+        child: Text(text, style: TextStyle(fontSize: 30,color: Color.fromARGB(255, 255, 255, 255),))),
     ),
   );
 }

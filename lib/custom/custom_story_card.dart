@@ -12,7 +12,6 @@ class _CustomStoryCardState extends State<CustomStoryCard> {
   bool isFevorite = false;
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     isFevorite=false;
   }
