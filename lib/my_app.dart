@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:studing/pages/Task3.dart';
-import 'package:studing/pages/home_page.dart';
-import 'package:studing/pages/search_screan.dart';
-import 'package:studing/pages/task.dart';
+import 'package:studing/pages/anotherSceans/home_page.dart';
+import 'package:studing/pages/anotherSceans/search_screan.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
