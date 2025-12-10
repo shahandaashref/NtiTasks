@@ -111,8 +111,8 @@ class ProfileImage extends StatelessWidget {
           ),
         ),
         Container(
-          height: 70,
-          width: 70,
+          height: 80,
+          width: 80,
           decoration: BoxDecoration(
             shape: BoxShape.circle,
             border: Border.all(color: Colors.white, width: 2),

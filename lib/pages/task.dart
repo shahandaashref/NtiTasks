@@ -5,166 +5,178 @@ class Task extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        centerTitle: true,
-        backgroundColor: const Color.fromARGB(255, 2, 91, 60),
-        title: const Padding(
-          padding: EdgeInsets.all(16),
-          child: Text(
-            'Profile',
-            textAlign: TextAlign.center,
-            style: TextStyle(
-                fontWeight: FontWeight.bold,
-                color: Color.fromARGB(255, 197, 182, 182)),
+    return DefaultTabController(
+      length: 3,
+      child: Scaffold(
+        bottomNavigationBar: BottomNavigationBar(items: const [
+          BottomNavigationBarItem(icon: Icon(Icons.home), label: 'home'),
+          BottomNavigationBarItem(icon: Icon(Icons.person), label: 'profile'),
+          BottomNavigationBarItem(icon: Icon(Icons.search), label: 'search'),
+        ]),
+        backgroundColor: Colors.blue[900],
+        appBar: AppBar(
+          backgroundColor: Colors.blue[900],
+          centerTitle: true,
+          title: const Text(
+            'AppBar',
+            style: TextStyle(fontWeight: FontWeight.bold, color: Colors.white),
           ),
-        ),
-        actions: [
-          const SizedBox(
-            width: 10,
-          ),
-          IconButton(
+          leading: IconButton(
               onPressed: () {},
-              icon: const Padding(
-                padding: EdgeInsets.all(8.0),
-                child: Icon(
-                  Icons.edit,
-                  size: 20,
-                  color: Color.fromARGB(255, 114, 111, 111),
+              icon: const Icon(
+                Icons.menu,
+                color: Colors.white,
+              )),
+        ),
+        body: Column(
+          children: [
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Container(
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(20),
                 ),
-              ))
-        ],
-      ),
-      body: Column(
-        children: [
-          Stack(
-            alignment: Alignment.center,
-            children: [
-              Container(
-                height: 200,
-                width: double.infinity,
-                child: Image.network(
-                  'https://img.freepik.com/premium-photo/beautiful-summer-landscape-mountains-generative-ai-illustrator_993599-27.jpg',
-                  fit: BoxFit.cover,
-                ),
-              ),
-              const Positioned(
-                bottom: 25,
-                child: CircleAvatar(
-                  radius: 50,
-                  backgroundImage: NetworkImage(
-                      'https://tse1.mm.bing.net/th/id/OIP.DETtorxBtKVA8U0rV2RYoAHaHa?rs=1&pid=ImgDetMain&o=7&rm=3'),
-                ),
-              )
-            ],
-          ),
-          const SizedBox(
-            height: 40,
-          ),
-          const Text(
-            'Aya Hussein',
-            style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
-          ),
-          const SizedBox(
-            height: 20,
-          ),
-          Text(
-            "Software Engineer",
-            style: TextStyle(
-              fontSize: 16,
-              color: Colors.grey[750],
-            ),
-          ),
-          const SizedBox(
-            height: 20,
-          ),
-          Text(
-            "Egypt, Cairo ",
-            style: TextStyle(
-              fontSize: 14,
-              color: Colors.grey[750],
-            ),
-          ),
-          const SizedBox(
-            height: 10,
-          ),
-          const Card(
-            color: Color.fromARGB(255, 120, 137, 146),
-            margin: EdgeInsets.symmetric(horizontal: 17, vertical: 10),
-            child: Padding(
-              padding: EdgeInsets.all(17),
-              child: Row(
-                children: [
-                  Icon(Icons.email),
-                  SizedBox(
-                    width: 35,
+                child: const Padding(
+                  padding: EdgeInsets.all(10),
+                  child: Row(
+                    children: [
+                      Text(
+                        '  Text: "Search....."',
+                        style: TextStyle(color: Colors.grey),
+                      ),
+                      SizedBox(
+                        width: 110,
+                      ),
+                      Icon(
+                        Icons.search,
+                        color: Colors.grey,
+                      )
+                    ],
                   ),
-                  Text('ayahusseinmohamed@gmail.com'),
-                ],
+                ),
               ),
             ),
-          ),
-          Divider(
-            thickness: 2,
-            color: Colors.grey.shade300,
-            height: 30,
-            indent: 20,
-            endIndent: 20,
-          ),
-          Expanded(
-            child: ListView(
-              children: [
-                CustomListTilePart(
-                  iconData: Icons.settings,
-                  text: 'Account Settings',
+            //Todo remove Expanded Widget
+
+            Expanded(
+              child: Container(
+                color: Colors.white,
+                child: Column(
+                  children: [
+                    TabBar(
+                      labelColor: Colors.blue[300],
+                      unselectedLabelColor: Colors.blue[300],
+                      indicatorColor: Colors.blue,
+                      tabs: const [
+                        Tab(text: "Featured"),
+                        Tab(text: "Categories"),
+                        Tab(text: "Trending"),
+                      ],
+                    ),
+                    Expanded(
+                      child: Container(
+                        color: Colors.white,
+                        child: const TabBarView(
+                          children: [
+                            FeaturedTab(),
+                            Center(child: Text("Categories Page")),
+                            Center(child: Text("Trending Page")),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ],
                 ),
-                CustomListTilePart(
-                  iconData: Icons.settings,
-                  text: 'Account Settings',
-                ),
-                CustomListTilePart(
-                  iconData: Icons.settings,
-                  text: 'Account Settings',
-                ),
-                CustomListTilePart(
-                  iconData: Icons.settings,
-                  text: 'Account Settings',
-                ),
-              ],
+              ),
             ),
-          )
-        ],
+          ],
+        ),
       ),
     );
   }
-}class CustomListTilePart extends StatelessWidget {
-  final IconData iconData;
-  final String text;
-  CustomListTilePart({
-    super.key,
-    required this.iconData,
-    required this.text,
-  });
+}
 
-  @override
+class FeaturedTab extends StatelessWidget {
+  const FeaturedTab({super.key});@override
   Widget build(BuildContext context) {
-    return Container(
-      margin: const EdgeInsets.only(bottom: 16, left: 10, right: 10),
-      decoration: BoxDecoration(
-        color: Colors.grey.shade200,
-        borderRadius: BorderRadius.circular(12),
-        boxShadow: const [
-          BoxShadow(
-            color: Colors.black12,
-            blurRadius: 4,
-            offset: Offset(0, 2),
+    return SingleChildScrollView(
+      child: Column(
+        children: [
+          GridView.count(
+            crossAxisCount: 2,
+            physics: const NeverScrollableScrollPhysics(),
+            shrinkWrap: true,
+            mainAxisSpacing: 10,
+            crossAxisSpacing: 10,
+            children: List.generate(
+              4,
+              (index) {
+                return Container(
+                  margin: const EdgeInsets.symmetric(horizontal: 15),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(10),
+                    color: Colors.grey[200],
+                  ),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Image.network(
+                        'https://th.bing.com/th/id/OIP.1U07RLi63CCUS8ifHNBYnwHaHa?o=7rm=3&rs=1&pid=ImgDetMain&o=7&rm=3',
+                        width: 70,
+                        height: 70,
+                      ),
+                      const SizedBox(
+                        height: 10,
+                      ),
+                      const Text('Product Name'),
+                      const Text('Price'),
+                      Row(
+                        children: [
+                          const SizedBox(
+                            width: 40,
+                          ),
+                          const Text('IconButton'),
+                          const SizedBox(
+                            width: 5,
+                          ),
+                          IconButton(
+                              onPressed: () {},
+                              icon: const Icon(Icons.favorite_border))
+                        ],
+                      )
+                    ],
+                  ),
+                );
+              },
+            ),
+          ),
+          const SizedBox(height: 20),
+          SizedBox(
+            height: 80,
+            child: ListView(
+              scrollDirection: Axis.horizontal,
+              children: List.generate(
+                10,
+                (index) {
+                  return Container(
+                    width: 60,
+                    margin: const EdgeInsets.symmetric(horizontal: 5),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(8),
+                    ),
+                    child: const CircleAvatar(
+                      radius: 50,
+                      backgroundColor: Colors.grey,
+                      backgroundImage: NetworkImage(
+                          'https://tse4.mm.bing.net/th/id/OIP.F71vbSiMW2cFH2kCk3rDuAHaHa?rs=1&pid=ImgDetMain&o=7&rm=3'),
+                    ),
+                  );
+                },
+              ),
+            ),
           )
         ],
-      ),
-      child: ListTile(
-        leading: Icon(iconData, color: Colors.black38),
-        title: Text(text),
-        trailing: const Icon(Icons.arrow_forward_ios, size: 16),
       ),
     );
   }

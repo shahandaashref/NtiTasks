@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:studing/pages/Task3.dart';
 import 'package:studing/pages/home_page.dart';
+import 'package:studing/pages/search_screan.dart';
 import 'package:studing/pages/task.dart';
 
 class MyApp extends StatelessWidget {
@@ -15,7 +16,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
-      home: Task3(),
+      home: SearchScrean(),
     );
   }
 }

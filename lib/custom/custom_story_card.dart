@@ -1,8 +1,21 @@
 // 3. Story Card Widget
 import 'package:flutter/material.dart';
 
-class CustomStoryCard extends StatelessWidget {
+class CustomStoryCard extends StatefulWidget {
   const CustomStoryCard({super.key});
+
+  @override
+  State<CustomStoryCard> createState() => _CustomStoryCardState();
+}
+
+class _CustomStoryCardState extends State<CustomStoryCard> {
+  bool isFevorite = false;
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    isFevorite=false;
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -13,8 +26,8 @@ class CustomStoryCard extends StatelessWidget {
         borderRadius: BorderRadius.circular(15),
         color: Colors.white,
         boxShadow: [
-          BoxShadow(color: Colors.grey.withValues(alpha:  0.1), blurRadius: 5)
-        ]
+          BoxShadow(color: Colors.grey.withValues(alpha: 0.1), blurRadius: 5),
+        ],
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -35,16 +48,30 @@ class CustomStoryCard extends StatelessWidget {
               children: [
                 const Text(
                   'Meeting',
-                   style: TextStyle(fontWeight: FontWeight.bold),
-                   maxLines: 1, 
-                   overflow: TextOverflow.ellipsis
+                  style: TextStyle(fontWeight: FontWeight.bold),
+                  maxLines: 1,
+                  overflow: TextOverflow.ellipsis,
                 ),
                 const SizedBox(height: 5),
                 Row(
-                  children: const [
+                  children: [
                     Icon(Icons.access_time, size: 14, color: Colors.grey),
                     SizedBox(width: 4),
-                    Text('10:00 AM', style: TextStyle(fontSize: 12, color: Colors.grey)),
+                    Text(
+                      '10:00 AM',
+                      style: TextStyle(fontSize: 12, color: Colors.grey),
+                    ),
+                    Spacer(),
+                    IconButton(
+                      onPressed: () {
+                        setState(() {
+                          isFevorite = !isFevorite;
+                        });
+                      },
+                      icon: isFevorite
+                          ? Icon(Icons.favorite, color: Colors.redAccent)
+                          : Icon(Icons.favorite_outline),
+                    ),
                   ],
                 ),
               ],
