@@ -14,32 +14,10 @@ class _SearchScreanState extends State<SearchScrean> {
   Widget build(BuildContext context) {
     return DefaultTabController(
       length: 3,
-      child: Scaffold(
-        backgroundColor: const Color.fromARGB(255, 240, 240, 240),
-        bottomNavigationBar: BottomNavigationBar(
-          items: const [
-            BottomNavigationBarItem(icon: Icon(Icons.home), label: 'home'),
-            BottomNavigationBarItem(icon: Icon(Icons.person), label: 'profile'),
-            BottomNavigationBarItem(icon: Icon(Icons.search), label: 'search'),
-          ],
-        ),
-        appBar: AppBar(
-          backgroundColor: const Color.fromARGB(255, 63, 83, 119),
-          title: Text('AppBar', style: TextStyle(color: Colors.white)),
-          centerTitle: true,
-        ),
+      child: Container(
+        color: const Color.fromARGB(255, 240, 240, 240),
 
-        // PreferredSize(
-        //   preferredSize: Size.fromHeight(80),
-        //   child: Container(
-        //     color: const Color.fromARGB(255, 63, 83, 119),
-        //     child: Column(
-        //       children: [Text('AppBar', style: TextStyle(color: Colors.white))],
-        //     ),
-        //   ),
-        // ),
-        drawer: MyDrawr(),
-        body: SingleChildScrollView(
+        child: SingleChildScrollView(
           child: Column(
             children: [
               CustomSearch(),
@@ -153,45 +131,6 @@ class CustomSearch extends StatelessWidget {
           suffixIcon: Icon(Icons.search),
           border: OutlineInputBorder(),
         ),
-      ),
-    );
-  }
-}
-
-class MyDrawr extends StatelessWidget {
-  const MyDrawr({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Drawer(
-      backgroundColor:  const Color.fromARGB(255, 63, 83, 119),
-      surfaceTintColor: Colors.white,
-      child: Column(
-        children: [
-          Container(
-            width: double.infinity,
-            height: 200,
-            decoration: BoxDecoration(color: const Color.fromARGB(255, 81, 125, 160)),
-            child: customCircleImage(
-              image:
-                  'https://tse2.mm.bing.net/th?id=OIF.spzhAr4ciVkk%2f%2fzceDQUtA&pid=Api&P=0&h=220',
-            ),
-          ),
-          SizedBox(
-            height: 500,
-            child: ListView(
-              children:List.generate(3, (index)=>ListTile(
-                  onTap: () {
-                    Navigator.pop(context);
-                  },
-                  textColor:Colors.white ,
-                  leading: Icon(Icons.person,color: Colors.white,),
-                  title: Text('Profile'),
-                  trailing:Icon(Icons.arrow_forward_ios,color: Colors.white,),
-                ),),
-            ),
-          ),
-        ],
       ),
     );
   }

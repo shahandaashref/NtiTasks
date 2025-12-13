@@ -1,45 +1,37 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 
-class Task3 extends StatelessWidget {
-  const Task3({super.key});
+class ProfileScreen extends StatelessWidget {
+  const ProfileScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: const Color.fromARGB(255, 240, 241, 241),
-      appBar: AppBar(
-        backgroundColor: const Color.fromARGB(255, 19, 70, 159),
-        centerTitle: true,
-        title: Text(
-          'Profile',
-          style: TextStyle(fontSize: 30, color: Colors.white),
+    return Container(
+      color: const Color.fromARGB(255, 240, 241, 241),
+      child: SingleChildScrollView(
+        child: Column(
+          children: [
+            ProfileImage(),
+            Gap(15),
+            Text("Shahanda Ashraf", style: TextStyle(fontSize: 25)),
+            Gap(15),
+            Text("Software Engineer", style: TextStyle(fontSize: 20)),
+            Gap(15),
+            Text("Egypt Bani Swauif", style: TextStyle(fontSize: 20)),
+            Gap(10),
+            UserEmail(),
+            Gap(20),
+            Divider(
+              thickness: 1,
+              height: 14,
+              indent: 20,
+              color: Colors.white,
+              endIndent: 20,
+            ),
+            Gap(15),
+            ProfileMenuTile(),
+          ],
         ),
-        actions: [Icon(Icons.account_circle_sharp, color: Colors.white)],
-      ),
-
-      body: Column(
-        children: [
-          ProfileImage(),
-          Gap(15),
-          Text("Shahanda Ashraf",style: TextStyle(fontSize: 25),),
-          Gap(15),
-          Text("Software Engineer",style: TextStyle(fontSize: 20),),
-          Gap(15),
-          Text("Egypt Bani Swauif",style: TextStyle(fontSize: 20),),
-          Gap(10),
-          UserEmail(),
-          Gap(20),
-          Divider(
-            thickness: 1,
-            height: 14,
-            indent: 20,
-            color: Colors.white,
-            endIndent: 20,
-          ),
-          Gap(15),
-          ProfileMenuTile(),
-        ],
       ),
     );
   }
@@ -87,7 +79,9 @@ class UserEmail extends StatelessWidget {
         color: const Color.fromARGB(149, 71, 141, 176),
         borderRadius: BorderRadius.circular(16),
       ),
-      child: Row(children: [Icon(Icons.mail), Gap(20), Text("Shahanda@gmail.com")]),
+      child: Row(
+        children: [Icon(Icons.mail), Gap(20), Text("Shahanda@gmail.com")],
+      ),
     );
   }
 }
@@ -129,14 +123,14 @@ class ProfileImage extends StatelessWidget {
   }
 }
 
-List <IconData>cardIcon = [
+List<IconData> cardIcon = [
   Icons.settings,
   Icons.notifications,
   Icons.notifications,
   Icons.notifications,
   Icons.notifications,
 ];
-List <String>cardText = [
+List<String> cardText = [
   'Setting',
   'Notifications',
   'Notifications',

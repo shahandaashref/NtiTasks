@@ -20,7 +20,7 @@ class _CustomStoryCardState extends State<CustomStoryCard> {
   Widget build(BuildContext context) {
     return Container(
       margin: const EdgeInsets.only(right: 15),
-      width: 140,
+      width: 130,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(15),
         color: Colors.white,
@@ -36,12 +36,12 @@ class _CustomStoryCardState extends State<CustomStoryCard> {
             child: Image.network(
               'https://cdn.pixabay.com/photo/2024/06/18/00/08/woman-8836743_960_720.jpg',
               fit: BoxFit.cover,
-              height: 100,
+              height: 80,
               width: double.infinity,
             ),
           ),
           Padding(
-            padding: const EdgeInsets.all(8.0),
+            padding: const EdgeInsets.all(4.0),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -51,7 +51,6 @@ class _CustomStoryCardState extends State<CustomStoryCard> {
                   maxLines: 1,
                   overflow: TextOverflow.ellipsis,
                 ),
-                const SizedBox(height: 5),
                 Row(
                   children: [
                     Icon(Icons.access_time, size: 14, color: Colors.grey),
